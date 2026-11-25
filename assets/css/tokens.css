@@ -1,0 +1,70 @@
+/* RIGGED · ход разработки — дизайн-токены.
+   Производные от shozit-site/site/assets/css/tokens.css (v3 Field) без изменений значений бренда.
+   Шрифты: те же woff2 + OFL (см. DESIGN.md §9). Радиус 0, без теней, градиентов и свечений. */
+:root {
+  /* Студийная рамка (шапка, подвал, переходы) — ультрамарин ShozitDev */
+  --c-field: #1D2A8A;
+  --c-field-text: #F3EFE6;
+  --c-field-muted: #BCC3EE;
+  --c-field-rule: #3A4AA8;
+  --c-paper: #F3EFE6;
+  --c-ink: #1D2A8A;
+  --c-plate: #0E1020;
+
+  /* Поле игры RIGGED — основная поверхность сайта прогресса */
+  --rg-field: #14170F;      /* фон */
+  --rg-raise: #1A1E14;      /* раскрытая строка, панель фильтра (сдвиг светлоты ~3%, не карточка) */
+  --rg-text: #EDE8D8;       /* 14.78:1 */
+  --rg-muted: #AEAA94;      /* 7.74:1 */
+  --rg-rule: #2B3022;       /* линейки, только декор */
+  --rg-rule-strong: #4A5038;/* линейка текущей вехи / фокус-рамки неактивных */
+  --rg-accent: #D4BE8A;     /* латунь: ОДНО значение — «сейчас» (текущая веха, в работе) */
+  --rg-on-accent: #14170F;  /* текст на латуни 10.04:1 */
+  --rg-issue: #E0907A;      /* только «известная проблема / тест не пройден», 6.0:1 на поле */
+
+  /* Статусы: различаются формой знака и словом, цвет — только 2 значения выше */
+  --st-done: var(--rg-text);
+  --st-progress: var(--rg-accent);
+  --st-testing: var(--rg-text);
+  --st-planned: var(--rg-muted);
+  --st-issue: var(--rg-issue);
+
+  /* Типографика (как на shozit-site) */
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-text: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs-display: clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
+  --fs-h1: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
+  --fs-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --fs-h3: 1.5rem;
+  --fs-lead: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-meta: 0.875rem;
+  --fs-micro: 0.8125rem;    /* минимум для любого текста, вкл. кириллицу */
+  --lh-display: 0.92; --lh-head: 1.12; --lh-body: 1.55;
+  --fw-display: 800; --fw-display-strong: 600; --fw-text: 420; --fw-text-strong: 600;
+  --tracking-display: -0.03em; --tracking-meta: 0.02em;
+
+  /* Сетка и отступы (база 8px) */
+  --s-1: 4px; --s-2: 8px; --s-3: 16px; --s-4: 24px; --s-5: 32px;
+  --s-6: 48px; --s-7: 64px; --s-8: 96px;
+  --gutter: 16px; --grid-cols: 4; --grid-gap: 16px;
+  --measure: 66ch; --container: 1312px;
+  --ledger-num: 4.5ch;      /* колонка номера строки */
+
+  /* Линии и форма */
+  --rule-w: 1px; --rule-strong-w: 2px;
+  --radius: 0; --radius-control: 2px;
+  --cut-h: clamp(28px, 5vw, 96px);
+  --cut-offset: 3px;        /* :active кнопки и знак «в работе» сдвигаются на 3px вправо */
+
+  /* Движение */
+  --ease-cut: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-row: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-cut: 340ms; --dur-rule: 450ms; --dur-row: 420ms; --stagger-row: 60ms;
+  --dur-reveal: 240ms;
+}
+@media (min-width: 600px)  { :root { --gutter: 24px; --grid-cols: 8;  --grid-gap: 24px; } }
+@media (min-width: 1024px) { :root { --gutter: 48px; --grid-cols: 12; --grid-gap: 24px; } }
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-cut: 0ms; --dur-rule: 0ms; --dur-row: 0ms; --stagger-row: 0ms; --dur-reveal: 0ms; }
+}

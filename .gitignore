@@ -1,0 +1,11 @@
+_site/
+__pycache__/
+*.pyc
+.env
+*.log
+.DS_Store
+.claude/
+design/mockups/
+data/private/
+REVIEW.md
+.publish.lock

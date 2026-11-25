@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rigged: ход разработки</title>
+<meta name="description" content="Открытая ведомость разработки игры RIGGED: вехи, задачи, тесты, известные проблемы и журнал изменений. Без сюжетных спойлеров.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1D2A8A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/golos-text-variable-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-field="rigged">
+<a class="skip" href="#main">К содержанию</a>
+<header class="site-header"><div class="wrap bar">
+<a href="https://shozit.ru/" aria-label="ShozitDev" style="color:inherit"><svg class="mark" viewBox="160 90 870 1012" aria-hidden="true"><path d="M1023 695.2C1009.1 654.8 988.4 614.6 960 575.2C942.3 551.2 924.2 528.4 906.5 506.2C813.7 389.8 732.8 288.4 800 95.2C580 185.2 390 315.2 325 495.2C304.3 553.7 292 622.8 288.5 695.2H1023Z"/><path d="M250 1095.2C430 1040.2 630 1040.2 820 1095.2C913.7 985.8 952.6 839.8 903 695.2H168.5C161.9 833.4 187.6 983.7 250 1095.2Z"/></svg></a>
+<div class="crumb"><a href="https://shozit.ru/rigged/">Rigged</a><span aria-hidden="true">/</span><b>Ход разработки</b></div>
+<nav class="nav" aria-label="Студия"><a href="https://shozit.ru/">ShozitDev</a><a href="https://shozit.ru/rigged/">Страница игры</a></nav>
+</div></header>
+<div style="height:var(--cut-h)"></div>
+<nav class="sub" aria-label="Разделы прогресса"><div class="wrap"><ol id="subnav">
+<li><a href="#overview" data-sec="overview">Обзор</a></li>
+<li><a href="#roadmap" data-sec="roadmap">Дорожная карта</a></li>
+<li><a href="#tasks?status=done" data-sec="tasks" data-status="done">Готово<span class="n"></span></a></li>
+<li><a href="#tasks?status=progress" data-sec="tasks" data-status="progress">В работе<span class="n"></span></a></li>
+<li><a href="#tasks?status=testing" data-sec="tasks" data-status="testing">На тесте<span class="n"></span></a></li>
+<li><a href="#tasks?status=planned" data-sec="tasks" data-status="planned">В плане<span class="n"></span></a></li>
+<li><a href="#tests" data-sec="tests">Тесты</a></li>
+<li><a href="#issues" data-sec="issues">Известные проблемы<span class="n"></span></a></li>
+<li><a href="#changelog" data-sec="changelog">Изменения</a></li>
+</ol></div></nav>
+<main id="main">
+<section id="overview" aria-labelledby="h-top"><div class="wrap hero">
+<h1 id="h-top">Rigged: ход разработки</h1>
+<p class="lead">Открытая ведомость: что сделано, что в работе, что на проверке и что ещё сломано. Данные собираются из отчётов проекта и истории разработки; сюжетные подробности не публикуются.</p>
+<p class="status" id="status-line" aria-live="polite"><span>Загрузка данных…</span></p>
+<noscript><!--NOSCRIPT_FALLBACK--></noscript>
+</div>
+<div class="wrap" id="tally-wrap"></div></section>
+<section class="blk wrap" id="roadmap" aria-labelledby="h-road"><div class="blk-h"><h2 id="h-road">Дорожная карта</h2></div><ol class="road" id="road" aria-label="Вехи"></ol></section>
+<section class="blk wrap" id="tasks" aria-labelledby="h-tasks">
+<div class="blk-h"><h2 id="h-tasks">Задачи</h2></div>
+<form class="filters" id="filters" role="search" onsubmit="return false">
+<fieldset class="seg" id="seg"><legend>Статус</legend></fieldset>
+<label class="search">Поиск<input type="search" id="q" placeholder="название, номер, веха" autocomplete="off"></label>
+</form>
+<p class="meta" role="status" id="count">&nbsp;</p>
+<ol class="ledger" id="list" style="margin-top:var(--s-3)"></ol>
+</section>
+<section class="blk wrap" id="tests" aria-labelledby="h-tests"><div class="blk-h"><h2 id="h-tests">Тесты</h2></div><div id="tests-body"></div></section>
+<section class="blk wrap issues" id="issues" aria-labelledby="h-iss"><div class="blk-h"><h2 id="h-iss">Известные проблемы</h2></div><ol class="ledger" id="issue-list"></ol></section>
+<section class="blk wrap" id="changelog" aria-labelledby="h-chg"><div class="blk-h"><h2 id="h-chg">Изменения</h2></div><ol class="log" id="log"></ol></section>
+<section class="blk wrap" id="sources" aria-labelledby="h-src"><div class="blk-h"><h2 id="h-src">Откуда данные</h2></div>
+<div class="rules" id="rules"></div><ul class="sources" id="source-list"></ul></section>
+</main>
+<footer class="site-footer"><div class="wrap"><span>© 2026 ShozitDev</span><a href="data/progress.json">data/progress.json</a><a href="https://github.com/shoz1t/rigged-progress">Репозиторий сайта</a><a href="https://shozit.ru/rigged/">Страница игры</a></div></footer>
+<script src="assets/js/progress.js" defer></script>
+</body>
+</html>
